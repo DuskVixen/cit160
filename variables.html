@@ -7,7 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vehicle Registration</title>
     <link rel="stylesheet" href="css/car.css">
-    <script defer src="js/dates.js"></script>
+    <script>
+        function getTotalDue() {
+            // This is a comment
+            let dicount = 0;
+            discount = 0 + parseFloat(document.getElementById('discount').value);
+            const price = 100;
+            let total = 1.1;
+            total = price - discount
+            document.querySelector('#total').innerHTML = 'Total Amount Due: $' + total.toFixed(2);
+        }
+    </script>
 </head>
 
 <body>
@@ -26,6 +36,7 @@
         <label for="discount">Discount Amount: </label><input type="number" id="discount">
         <div class="processing"><button onclick="getTotalDue()">Compute Total</button></div>
         </div>
+        <p id="total"></p>
     </main>
     <footer>©️2022 .:|:. Kaylie Phelps .:|:. CIT 160 at BYU-Idaho</footer>
 </body>

@@ -20,8 +20,8 @@ header, main, footer {
 }
 
 header, footer {
-	background-color: #000;
-	color: #fff;
+	background-color: rgb(158, 253, 253);
+	color: rgb(168, 167, 167);
 }
 
 h1 {
@@ -35,7 +35,7 @@ main {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	align-items: center;
-	background-color: #abe;
+	background-color: rgb(175, 248, 165);
 }
 
 label {
@@ -50,7 +50,7 @@ input, button {
 }
 
 button {
-	width: 100%;
+	width: 100%; color: rgb(0, 0, 0); background-color: rgb(241, 220, 202);
 }
 .processing {
 	grid-column: 1/3;

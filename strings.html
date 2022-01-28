@@ -7,25 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/story.css">
-    <script>
-        document.querySelector('#copyright').textContent = new Date().getFullYear();
-
-        function storyStart() {
-            // INPUT
-
-            // PROCESSING
-
-
-            //OUTPUT - Example output: "And it came to pass that the people of ___ did till the land, and raise all manner of ___, and flocks of herds, and flocks of all manner of ___ of every kind, and ___."
-
-        }  
-    </script>
-</head>
 
 <body>
     <header>
         <h1>Scripture Story Build</h1>
-        <h2>Student Name</h2>
+        <h2>Kaylie Pheps</h2>
     </header>
     <main>
         <h3>Inputs</h3>
@@ -39,8 +25,29 @@
         <p id="output"></p>
     </main>
     <footer>
-        &copy;<span id="copyright"></span> &bull; Student Name &bull; BYU-Idaho &bull; CIT 160
+        &copy;<span id="copyright"></span> &bull; Kaylie Phelps &bull; BYU-Idaho &bull; CIT 160
     </footer>
+    <script>
+        document.querySelector('#copyright').textContent = new Date().getFullYear();
+
+        function storyStart() {
+            // INPUT
+            let name = "Sarah";
+            let fruit = "apple";
+            let animalo = "horse";
+            let animalt = "lamb";
+
+            name = document.getElementById("firstname");
+            fruit = document.getElementById("fruit");
+            animalo = document.getElementById("animal1");
+            animalt = document.getElementById("animal2");
+            // PROCESSING
+            console.log(name + fruit + animalo + animalt)
+
+            //OUTPUT - Example output: "And it came to pass that the people of ___ did till the land, and raise all manner of ___, and flocks of herds, and flocks of all manner of ___ of every kind, and ___."
+
+        }  
+    </script>
 </body>
 
 </html>

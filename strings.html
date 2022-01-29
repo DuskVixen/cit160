@@ -32,20 +32,22 @@
 
         function storyStart() {
             // INPUT
-            let name = "Sarah";
-            let fruit = "apple";
-            let animalo = "horse";
-            let animalt = "lamb";
+            let name;
+            let fruit;
+            let animalo;
+            let animalt;
 
             name = document.getElementById("firstname").value;
             fruit = document.getElementById("fruit").value;
             animalo = document.getElementById("animal1").value;
             animalt = document.getElementById("animal2").value;
             // PROCESSING
-            console.log(name + fruit + animalo + animalt)
+            fruit = fruit + "s";
+            animalo = animalo + "s";
+            animalt = animalt + "s";
 
             //OUTPUT - Example output: "And it came to pass that the people of ___ did till the land, and raise all manner of ___, and flocks of herds, and flocks of all manner of ___ of every kind, and ___."
-
+            document.querySelector('#output').innerHTML = `And it came to pass that the people of ${name} did till the land, and raise all manner of ${animalt}, and flocks of herds, and flocks of all manner of ${animalo} of every kind, and ${fruit}.`;
         }  
     </script>
 </body>

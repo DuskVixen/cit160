@@ -10,7 +10,7 @@ header, footer, main {
 
 header,
 footer {
-	background-color: #000;
+	background-color: rgb(230, 230, 203);
 	color: #fff;
 	padding: 1rem;
 	text-align: center;
@@ -19,18 +19,20 @@ footer {
 footer {
 	font-size: smaller;
 	letter-spacing: 1.5pt;
+	color:rgb(231, 183, 231);
 }
 
 h1,
 h2 {
 	margin: 0;
 	text-align: center;
+	color: rgb(218, 159, 218);
 }
 
 h3 {
 	font-size: 1.3rem;
-	color: navy;
-	border-bottom: 1px solid navy;
+	color: rgb(11, 173, 248);
+	border-bottom: 1px solid rgb(11, 173, 248);
 	text-align: left;
 	margin: .5rem;
 }
@@ -39,8 +41,9 @@ main {
 	margin: 10px auto;
 	border: 1px solid rgba(0,0,0,.3);
 	padding: .5rem;
-	background-color: #abe;
+	background-color: palegoldenrod;
 	box-shadow: 0 0 30px;
+	color: indigo;
 }
 
 .heading {
@@ -53,7 +56,7 @@ main {
 input, button, textarea, select {
 	padding: .35rem;
 	font-weight: 700;
-	color: navy;
+	color: rgb(11, 173, 248);
 }
 
 button {
@@ -65,7 +68,7 @@ button {
 .process {
 	margin: 1rem;
 	padding: 1rem;
-	border-bottom: 2px solid navy;
+	border-bottom: 2px solid rgb(11, 173, 248);
 }
 
 .output {

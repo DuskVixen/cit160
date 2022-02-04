@@ -6,7 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pounds TO Kilograms</title>
+    <link rel="stylesheet" href="css/kilo.css">
+
+</head>
+
+<body>
+
+    <main>
+        <h1>Convert Pounds to Kilograms</h1>
+        <label class="heading">Pounds: <input type="text" id="pounds"></label>
+        <div class="process"><button onclick="getKilograms()">Convert to Kilograms</button>
+        </div>
+        <p id="output"></p>
+    </main>
+    <footer>
+        &copy;<span id="copyright"></span> &bull; Kaylie Phelps &bull; BYU-Idaho &bull; CIT 160
+    </footer>
     <script>
+        document.querySelector('#copyright').textContent = new Date().getFullYear();
+
         function getKilograms() {
             // Get the input assigned to a variable
             let pounds;
@@ -18,13 +36,7 @@
             document.querySelector('#output').innerHTML = kilograms.toFixed(1) + " Kilograms";
         }
     </script>
-</head>
-
-<body>
-    <label class="heading">Pounds: <input type="text" id="pounds"></label>
-    <div class="process"><button onclick="getKilograms()">Convert to Kilograms</button>
-    </div>
-    <p id="output"></p>
 </body>
+
 
 </html>

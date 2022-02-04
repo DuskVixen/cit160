@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pounds TO Kilograms</title>
+    <script>
+        function getKilograms() {
+            // Get the input assigned to a variable
+            let pounds;
+            let kilograms;
+            pounds = parseFloat(document.getElementById("pounds").value);
+            // the formula is pounds divided by 2.205 to get Kilograms
+            kilograms = pounds / 2.205;
+            // Show out put when button pressed
+            document.querySelector('#output').innerHTML = kilograms.toFixed(1) + " Kilograms";
+        }
+    </script>
+</head>
+
+<body>
+    <label class="heading">Pounds: <input type="text" id="pounds"></label>
+    <div class="process"><button onclick="getKilograms()">Convert to Kilograms</button>
+    </div>
+    <p id="output"></p>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam 1 Volume</title>
+    <script>
+        function findVolume() {
+            //get inputs assigned to variables
+            let r;
+            let h;
+            r = parseFloat(document.getElementById("radius").value);
+            h = parseFloat(document.getElementById("height").value);
+            // calculate the volume V = Pi*r^2*h
+            let v;
+            v = Math.PI * r**2 * h;
+            //Show output
+            document.querySelector('#output').innerHTML = "Volume: " + v.toFixed(0);
+        }
+    </script>
+</head>
+
+<body>
+    <label class="heading">Cylinder Height: <input type="text" id=height></label>
+    <label class="heading">Cylinder Radius: <input type="text" id=radius></label>
+    <div class="process"><button onclick="findVolume()">Calculate Volume</button>
+    </div>
+    <p id="output"></p>
+</body>
+
+</html>

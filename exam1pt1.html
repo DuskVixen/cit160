@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calculatePay() {
+            // declare all the variables and constants
+            const payRate = 15;
+            const overPay = 22.5;
+            // tax rate is 15% so that is 0.15, but that would
+            //decrease the amount, so you need to add a 1 at the front
+            const taxRate = 0.15;
+            let pay;
+            let normHours;
+            let overHours;
+            let tax;
+            //assign the inputs to variables
+            normHours = parseFloat(document.getElementById("regHours").value);
+            overHours = parseFloat(document.getElementById("overHours").value);
+            // do calculations to find the net pay
+            pay = (payRate * normHours) + (overPay * overHours);
+            tax = pay * taxRate;
+            pay = pay - tax;
+            // Show output
+            document.querySelector('#output').innerHTML = "Total pay: " + pay.toFixed(2)
+        }
+    </script>
+</head>
+
+<body>
+    <label class="heading">Total regular hours worked: <input type="text" id=regHours></label>
+    <label class="heading">Total overtime hours worked: <input type="text" id=overHours></label>
+    <div class="process"><button onclick="calculatePay()">Calculate Net Pay</button>
+    </div>
+    <p id="output"></p>
+
+</body>
+
+</html>

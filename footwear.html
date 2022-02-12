@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footwear</title>
+    <link rel="stylesheet" href="css/shoe.css">
+</head>
+
+<body>
+    <header>
+        <h1> What Footwear Should You Wear?</h1>
+        <h2>Kaylie Phelps</h2>
+    </header>
+    <main>
+        <label class="heading">What is the Weather like?</label>
+        <select id="weather">
+            <option value="" selected disabled>--Choose Weather--</option>\
+            <option value="Hot"> Hot 🔆</option>
+            <option value="Rain"> Rain ☔</option>
+            <option value="Snow"> Snow ❄️</option>
+            <option value=""> Unknown ❔</option>
+        </select>
+        <button onclick="findShoes()">Enter</button>
+        <p id="output"></p>
+    </main>
+    <footer>
+        &copy;<span id="copyright"></span> &bull; Kaylie Phelps &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+    <script>
+        document.querySelector('#copyright').textContent = new Date().getFullYear();
+
+        function findShoes() {
+            //Get variables and input
+            const weather = document.querySelector('#weather').value;
+            let shoes;
+            // Use loop to match each weather with the right shoes
+            switch (weather) {
+                case "Hot":
+                    shoes = "sandals";
+                    break;
+                case "Rain":
+                    shoes = "galoshes";
+                    break;
+                case "Snow":
+                    shoes = "boots";
+                    break;
+                default:
+                    shoes = "shoes";
+            }
+            // Tell user what shoes to wear
+            document.querySelector('#output').innerHTML = `You should wear ${shoes} today.`;
+        }
+
+    </script>
+</body>
+
+</html>

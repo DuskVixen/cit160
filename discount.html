@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount</title>
+    <link rel="stylesheet" href="css/disc.css">
+</head>
+
+<body>
+    <header>
+        <h1>Sales Conditional Discount</h1>
+        <h2>Kaylie Pheps</h2>
+    </header>
+    <main>
+        <label class="heading">What is your subtotal?: $<input type="text" id="subtotal" placeholder="5.00"></label>
+
+        <div class="process"><button onclick="getDiscount()">Get Total</button>
+        </div>
+        <p id="output"></p>
+    </main>
+    <footer>
+        &copy;<span id="copyright"></span> &bull; Kaylie Phelps &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+    <script>
+        document.querySelector('#copyright').textContent = new Date().getFullYear();
+
+        function getDiscount() {
+            // assign Inputs and get the day of the week
+            const subtotal = parseFloat(document.getElementById("subtotal").value);
+            const now = new Date();
+            let discount;
+            let tax;
+            let total;
+            let day = now.getDay();
+
+            // Processing, check whether you get a discount
+            if (day == 3 || day == 4) {
+                // get discount
+                discount = subtotal * 0.1;
+                total = subtotal - discount;
+            } else {
+                total = subtotal;
+            }
+            tax = total * 0.06;
+            total = total + tax;
+
+            //OUTPUT 
+            document.querySelector('#output').innerHTML = "Total: $" + total.toFixed(2);
+        }  
+    </script>
+</body>
+
+</html>

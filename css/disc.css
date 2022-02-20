@@ -1,0 +1,66 @@
+body {
+	font-size: 16px;
+    color:rgb(84, 172, 142);
+	background-color: rgb(9, 48, 2);
+}
+
+header, footer, main {
+	max-width: 500px;
+	margin: 0 auto;
+
+}
+
+header,
+footer {
+	background-color: rgb(191, 231, 139);
+	color: rgb(0, 0, 0);
+	padding: 1rem;
+	text-align: center;
+}
+
+footer {
+	font-size: smaller;
+	letter-spacing: 1.5pt;
+}
+
+h1,
+h2 {
+	margin: 0;
+	text-align: center;
+}
+
+main {
+	margin: 10px auto;
+	border: 1px solid rgb(191, 231, 139);
+	padding: .5rem;
+	background-color: rgb(255, 255, 255);
+	box-shadow: 0 0 30px;
+}
+
+.heading {
+	font-weight: 700;
+	font-size: larger;
+	display: block;
+	margin: .25rem;
+}
+
+input, button, textarea, select {
+	padding: .10rem;
+	font-weight: 500;
+	color: rgb(4, 128, 0);
+}
+
+button {
+	font-size: large;
+	width: 50%;
+}
+
+.process {
+	margin: 1rem;
+	padding: 1rem;
+	border-bottom: 2px solid navy;
+}
+
+.output {
+	margin: 1rem;
+}

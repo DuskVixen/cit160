@@ -37,7 +37,7 @@
             let day = now.getDay();
 
             // Processing, check whether you get a discount
-            if (day == 3 || day == 4) {
+            if ((day == 3 || day == 4) && subtotal > 50) {
                 // get discount
                 discount = subtotal * 0.1;
                 total = subtotal - discount;

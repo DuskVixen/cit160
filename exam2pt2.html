@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Exam 2: x > 20</title>
+</head>
+
+<body>
+    <p>Please enter two numbers:</p>
+    <input type="text" id="one" size="5"><br>
+    <input type="text" id="two" size="5">
+    <button type="button" onclick="test()">Click</button>
+    <div id="here"></div>
+
+    <script>
+        /* Input:
+         * Processing:
+         * Output:
+         */
+        function test() {
+            let num1 = parseFloat(document.getElementById("one").value);
+            let num2 = parseFloat(document.getElementById("two").value);
+            let output = ""
+            if (num1 + num2 > 20 || num1 > 5 && num2 > 5) {
+                output = "True";
+            } else {
+                output = "False";
+            }
+            document.querySelector('#here').textContent = output;
+        }
+    </script>
+</body>
+
+</html>

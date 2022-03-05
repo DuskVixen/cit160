@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam 2: ?</title>
+</head>
+
+<body>
+    <label class="hading">Start: <input type="text" id="start" size="10"><br></label>
+    <label class="hading">End: <input type="text" id="end" size="10"><br></label>
+    <label class="hading">Divisor: <input type="text" id="divisor" size="10"><br></label>
+    <button type="button" onclick="find()">Enter</button>
+    <div id="output"></div>
+    <script>
+        function find() {
+            //inputs & variables
+            const start = parseInt(document.getElementById('start').value);
+            const end = parseInt(document.getElementById('end').value);
+            const divisor = parseInt(document.getElementById('divisor').value);
+            let x = start;
+            let comb = "";
+            //processing
+            while (x <= end) {
+                if (x % divisor == 0) {
+                    comb += x + ' ';
+                }
+                x += 1;
+            }
+            document.querySelector('#output').innerHTML = comb;
+        }
+    </script>
+</body>
+
+</html>

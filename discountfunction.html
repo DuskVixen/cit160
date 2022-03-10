@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount2</title>
+    <link rel="stylesheet" href="css/typ.css">
+</head>
+
+<body>
+    <header>
+        <h1>Discount Function</h1>
+        <h2>Kaylie Pheps</h2>
+    </header>
+    <main>
+        <label class="heading">What are your sales? $<input type="text" id="subtotal" placeholder="5.00"></label>
+        <label for="state">
+            <select id="state">
+                <option value="" selected disabled>--Choose the State--</option>\
+                <option value="0.08">Virginia</option>
+                <option value="0.07">Ohio</option>
+                <option value="0.05">Nevada</option>
+            </select>
+        </label><br><br>
+        <div class="process"><button onclick="processTotal()">Process Total</button></div>
+        <p id="output"></p>
+    </main>
+    <footer>
+        &copy;<span id="copyright"></span> &bull; Kaylie Phelps &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+    <script>
+        document.querySelector('#copyright').textContent = new Date().getFullYear();
+
+        function processTotal() {
+            let total = 0;
+            let subtotal = parseFloat(document.querySelector('#subtotal').value);
+            let statetax = parseFloat(document.querySelector('#state').value)
+            let discount = dayDiscount();
+            total = subtotal * (1 - discount);
+            let adiscount = parseFloat(amountDiscount(subtotal));
+            total = total - subtotal * adiscount;
+            total = total + total * statetax;
+            //OUTPUT 
+            document.querySelector('#output').innerHTML = "Total: $" + total.toFixed(2);
+        }
+        function dayDiscount() {
+            const now = new Date();
+            let discount = 0;
+            let day = now.getDay();
+            switch (day) {
+                case 1:
+                    discount = 0.10;
+                    break;
+                case 2:
+                    discount = 0.15;
+                    break;
+                case 3:
+                    discount = 0.2;
+                    break;
+                case 4:
+                    discount = 0.15;
+                    break;
+                case 5:
+                    discount = 0.05;
+                    break;
+            }
+            return discount;
+
+        }
+        function amountDiscount(st) {
+            let aDiscount = 0;
+            if (st > 100) {
+                aDiscount = 0.10;
+            }
+            return aDiscount;
+        }
+    </script>
+</body>
+
+</html>

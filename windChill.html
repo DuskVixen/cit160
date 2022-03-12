@@ -16,8 +16,8 @@
     <div id="post"></div>
     <script>
         function doInputOutput() {
-            let temperature = document.querySelector('#temperature').value;
-            let windspeed = document.querySelector('#windspeed').value;
+            let temperature = parseFloat(document.querySelector('#temperature').value);
+            let windspeed = parseFloat(document.querySelector('#windspeed').value);
             let windchill = windChill(temperature, windspeed);
             document.getElementById('post').innerHTML = windchill.toFixed(2);
         }

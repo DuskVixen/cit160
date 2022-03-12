@@ -1,27 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wind Chill</title>
 </head>
+
 <body>
     <h1>Wind Chill</h1>
-    <label>What is the temperature in farenheit? <input type="text" id="temperature"></label>
-    <label>What is the windspeed? <input type="text" id="windspeed"></label>
-    <div class="process"><button onclick="doInputOutput()">I will say something important</button></div>
+    <label>Temperature in farenheit? <input type="text" id="temperature"></label>
+    <label>Windspeed? <input type="text" id="windspeed"></label>
+    <button onclick="doInputOutput()">Wind Chill</button>
+    <div id="post"></div>
     <script>
         function doInputOutput() {
             let temperature = document.querySelector('#temperature').value;
             let windspeed = document.querySelector('#windspeed').value;
             let windchill = windChill(temperature, windspeed);
+            document.getElementById('post').innerHTML = windchill.toFixed(2);
         }
         function windChill(tempF, speed) {
-            let f = 1;
-            f = 35.74 + (0.6215 * tempF) - (35.75 * (speed**0.16)) + (0.4275 * tempF * (speed ** 0.16));
-
+            let f = 0;
+            if (tempF <= 50 || speed >= 3) {
+                f = 35.74 + (0.6215 * tempF) - (35.75 * (speed ** 0.16)) + (0.4275 * tempF * (speed ** 0.16));
+            }
+            return f;
         }
     </script>
 </body>
+
 </html>

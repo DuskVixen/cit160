@@ -35,7 +35,7 @@
             annualR = annualR / 100;
             let x = computeFutureValue(principalI, annualR, year, ppy);
 
-            document.querySelector('#output').innerHTML = x.toFixed(2);
+            document.querySelector('#output').innerHTML = "$" + x.toFixed(2);
         }
         function computeFutureValue(principal, annualRate, years, periodsPerYear) {
             //formula f = a (1 + r)^n

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Calculator</title>
+    <link rel="stylesheet" href="css/typ.css">
+</head>
+
+<body>
+    <header>
+        <h1>Future Investment Calculator</h1>
+    </header>
+    <main>
+        <label class="heading">Principal Investiment $<input type="text" id="principalI" placeholder="0.00"></label>
+        <label class="heading">Annual Rate <input type="text" id="annualR" placeholder="0">%</label>
+        <label class="heading">Years: <input type="text" id="year" placeholder="0"></label>
+
+        <button onclick="doFV()">Calculate</button>
+        <p id="output"></p>
+    </main>
+    <footer>
+        &copy;<span id="copyright"></span> &bull; Kaylie Phelps &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+    <script>
+        document.querySelector('#copyright').textContent = new Date().getFullYear();
+        function doFV() {
+            //Inputs
+            let principalI = parseFloat(document.querySelector('#principalI').value);
+            let annualR = parseFloat(document.querySelector('#annualR').value);
+            let year = parseFloat(document.querySelector('#year').value);
+            let ppy = 12;
+            annualR = annualR / 100;
+            let x = computeFutureValue(principalI, annualR, year, ppy);
+
+            document.querySelector('#output').innerHTML = x.toFixed(2);
+        }
+        function computeFutureValue(principal, annualRate, years, periodsPerYear) {
+            //formula f = a (1 + r)^n
+            let a = principal;
+            let r = annualRate / periodsPerYear;
+            let n = years * periodsPerYear;
+            let futureV = a * (1 + r) ** n;
+            return futureV;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+
+<body>
+    <h1>Arrays</h1>
+    <button onclick="test()"">Click Me!</button>
+    <div id="output"></div>
+
+        <script>
+            /* Defining Table
+     * Input: no user input
+     * Processing: Test the addEnds and getMiddle functions by calling them.
+     * Output: The values returned from the addEnds and getMiddle functions.
+     */
+            function test() {
+                let list1 = [17, 8, 9, 5, 20];
+                let list2 = [12, 4, 8, 15, 17, 5, 20, 11];
+
+                // Test the addEnds function by calling it two times.
+                let sum1 = addEnds(list1);
+                let sum2 = addEnds(list2);
+
+                // Test the getMiddle function by calling it two times.
+                let mid1 = getMiddle(list1);
+                let mid2 = getMiddle(list2);
+
+                // Build a string to display to the user.
+                let output = `Sum 1: ${sum1}<br> Sum 2: ${sum2}<br>Middle 1: ${mid1}<br>Middle 2: ${mid2}`;
+
+                // Display the output string for the user to see.
+                document.getElementById('output').innerHTML = output;
+            }
+            function addEnds(list) {
+                let o = list[0];
+                let t = list[list.length - 1];
+                let sum = o + t;
+                return sum;
+            }
+
+            function getMiddle(list) {
+                let mid;
+                let num = list.length - 1;
+                mid = num / 2;
+                if (mid % 2 != 0) {
+
+                    mid = (list[mid - 0.5]) + (list[mid + 0.5]);
+                    mid = mid / 2
+                } else{
+                    mid = list[mid];
+                }
+                return mid;
+            }
+        </script>
+</body>
+
+</html>
